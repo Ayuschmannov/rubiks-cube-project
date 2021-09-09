@@ -65,7 +65,7 @@ def threelargest(list):
     x3new = [i[::-1] for i in x1[::1]]
 
 # reading image
-img = cv2.imread(r'C:\Users\ayusc\OneDrive\Pictures\rubiks-samples/2.png')
+img = cv2.imread(<path of image>)
 hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
 
 # right now, trying on perfect images, afterwards, will try to blur etc
