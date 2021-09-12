@@ -220,9 +220,9 @@ if len(cntrpink) != 0:
 
 #calling the function
 threelargest(cord)
-cv2.imshow("color detection", img)
+# cv2.imshow("color detection", img)
 
 # Wait Key
-cv2.waitKey(0)
+# cv2.waitKey(0)
 # Destroy window
-cv2.destroyAllWindows()
+# cv2.destroyAllWindows()
