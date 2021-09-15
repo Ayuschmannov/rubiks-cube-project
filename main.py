@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import glob
 
-path = <path of image>
+path = '<path of image folder>'
 img_number = 1
 
 for file in glob.glob(path):
@@ -10,7 +10,6 @@ for file in glob.glob(path):
     hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
     
     #defining coordinate lists
-    cord = []
     final = []
     color = [] 
     color2 = []
@@ -56,7 +55,6 @@ for file in glob.glob(path):
 
     sorted_ctrs = sorted(cntrall, key=lambda ctr: cv2.boundingRect(ctr)[0] + cv2.boundingRect(ctr)[1] * img.shape[1] )
     for i, ctr in enumerate(sorted_ctrs):
-            # Get bounding box
             x, y, w, h = cv2.boundingRect(ctr)
             x1 = int(x+(w/2))
             y1 = int(y+(h/2))
@@ -64,7 +62,6 @@ for file in glob.glob(path):
 
     k = 0
     for x in color:
-            # check if exists in unique_list or not
             if x not in color2:
                 color2.append(x)
 
@@ -76,10 +73,10 @@ for file in glob.glob(path):
 
     # print(final)
 
-    output_path = r'C:\Users\ayusc\OneDrive\Pictures\output/output_image_'
+    output_path = '<path>'
     completeName = output_path + str(img_number) + '.txt'
     img_number += 1
-    print(completeName)
+    # print(completeName)
     # cv2.imshow("color detection", img)
     f = open(completeName, "w+")
     for a in range(0,9):
